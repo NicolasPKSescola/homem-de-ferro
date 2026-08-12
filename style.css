@@ -357,7 +357,7 @@ body{
 .conteiner-cadastro{
     max-width: 550px;
     margin: 20px auto;
-    height: 60vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     background-color: var(--fundoCinema);
@@ -368,7 +368,6 @@ body{
 }
 
 .conteiner-ch1{
-    height: 60vh;
     flex: 1;
     padding: 20px;
     background-size: cover;
@@ -387,7 +386,6 @@ body{
 }
 
 .cadastro-envio{
-    height: 60vh;
     padding: 30px 16px;
     background-color: var(--cinzaGeek);
     max-height: 90%;
