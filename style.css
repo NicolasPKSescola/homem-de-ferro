@@ -357,22 +357,24 @@ body{
 .conteiner-cadastro{
     max-width: 550px;
     margin: 20px auto;
-    height: 73vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     background-color: var(--fundoCinema);
     border-radius: 11px;
     border: 3px solid var(--laranja);
     overflow: hidden;
+    max-height: 100%;
 }
 
 .conteiner-ch1{
+    height: 60vh;
     flex: 1;
     padding: 20px;
     background-size: cover;
     text-align: center;
     margin: 0 auto;
-    max-height: 15%;
+    max-height: 10%;
 }
 
 .conteiner-ch1 h1{
@@ -385,8 +387,10 @@ body{
 }
 
 .cadastro-envio{
+    height: 60vh;
     padding: 30px 16px;
     background-color: var(--cinzaGeek);
+    max-height: 90%;
 }
 
 .cadastro-envio label{
