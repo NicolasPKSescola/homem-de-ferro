@@ -387,7 +387,6 @@ body{
 .cadastro-envio{
     padding: 30px 16px;
     background-color: var(--cinzaGeek);
-    gap: 10px
 }
 
 .cadastro-envio label{
