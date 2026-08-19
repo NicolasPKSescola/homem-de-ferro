@@ -433,3 +433,7 @@ body{
     line-height: 1.4;
     border: 3px solid var(--laranja);
 }
+
+footer{
+    text-align: center;
+}
