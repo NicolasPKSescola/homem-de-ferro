@@ -439,3 +439,65 @@ footer{
 }
 
 /* log-in */
+
+.conteiner-login{
+    max-width: 550px;
+    margin: 20px auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fundoCinema);
+    border-radius: 11px;
+    border: 3px solid var(--laranja);
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.login-envio{
+    padding: 30px 16px;
+    background-color: var(--cinzaGeek);
+    max-height: 90%;
+}
+
+.login-envio label{
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border: 3px solid var(--laranja);;
+}
+
+.login-envio input {
+    flex: 1;
+    padding: 12px;
+    background-color: #1c1c1e;
+    border: 1px solid #2c2c2e;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    margin-top: 20px;
+}
+
+.login-envio button {
+    padding: 10px 20px;
+    background-color:var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-envio button:hover {
+    background-color:var(--fundoCinema);
+}
+
+.login-envio #resposta{
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border: 3px solid var(--laranja);
+}
