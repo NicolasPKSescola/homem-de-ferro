@@ -352,7 +352,7 @@ body{
     background-color:var(--fundoCinema);
 }
 
-/* log in */
+/* cadastro */
 
 .conteiner-cadastro{
     max-width: 550px;
@@ -437,3 +437,5 @@ body{
 footer{
     text-align: center;
 }
+
+/* log-in */
