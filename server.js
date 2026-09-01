@@ -50,6 +50,25 @@ app.post('/cadastro', (req, res)=>{
     }, 5000);
 });
 
+app.post('/login', (req, res)=>{
+    const {email, senha} = req.body;
+    
+    if (!email || !senha) {
+        return res.status(400).json({erro:"Preencha todos os campos"});
+    }
+
+    const emailExiste = user.find((busca)=> busca.email.toLowerCase() === email.toLowerCase());
+
+    if (!emailExiste || emailExiste.senha != senha) {
+        return res.status(400).json({erro:"Email ou senha incorretos!"});
+    }
+
+    return res.json({
+        mensagem: "Login realizado com Sucesso!!",
+        usuario: emailExiste.email
+    });
+})
+
 app.listen(PORT, ()=>{
     console.log(`Servidor rodando na porta ${PORT}`);
 });
