@@ -4,6 +4,7 @@ import 'dotenv/config';
 
 const app = express();
 const PORT = process.env.PORT || 5500;
+const modelo = 'openai/gpt-oss-120b';
 
 app.use(express.json());
 app.use(cors());
@@ -69,6 +70,24 @@ app.post('/login', (req, res)=>{
         usuario: emailExiste.email
     });
 })
+
+app.post('/chat', (req, res)=>{
+    try {
+        const API_KEY = process.env.GROQ_API_KEY;
+        const historico = req.body.historico || [];
+
+        const persona = [
+            {
+                "role": "system",
+                "content": "Você é Tony Stark, responda como um bilhonario de forma curta e objetiva"
+            }
+        ];
+
+        persona.push(...historico);
+    } catch (erro) {
+        
+    }
+});
 
 app.listen(PORT, ()=>{
     console.log(`Servidor rodando na porta ${PORT}`);
