@@ -2,9 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const app = express();
 const PORT = process.env.PORT || 5500;
 const modelo = 'openai/gpt-oss-120b';
+
+const url_api = "https://api.groq.com/openai/v1/chat/completions&quot";
 
 app.use(express.json());
 app.use(cors());
