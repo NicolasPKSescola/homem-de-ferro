@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 const modelo = 'openai/gpt-oss-120b';
 
-const url_api = "https://api.groq.com/openai/v1/chat/completions&quot";
+const url_api = "https://api.groq.com/openai/v1/chat/completions";
 
 app.use(express.json());
 app.use(cors());
