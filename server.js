@@ -75,9 +75,9 @@ app.post('/login', (req, res)=>{
     });
 })
 
-app.post('/chat', (req, res)=>{
+app.post('/chat', async (req, res)=>{
     try {
-        const API_KEY = process.env.GROQ_API_KEY;
+        const api_key = process.env.GROQ_API_KEY;
         const historico = req.body.historico || [];
 
         const persona = [
@@ -88,8 +88,29 @@ app.post('/chat', (req, res)=>{
         ];
 
         persona.push(...historico);
+
+        const respostaBruta = await fetch(url_api, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${api_key}`
+            },
+            body: JSON.stringify({
+                model: modelo,
+                messages: persona
+            })
+        });
+
+        const resultado = await respostaBruta.json();
+
+        if (!respostaBruta.ok) {
+            console.log(" Erro retornado pela Groq:", resultado);
+            return res.status(500).json({ erro: "Erro na comunicação com a Groq." });
+        }
+
+        return res.json({ resposta: resultado.choices[0].message.content });
     } catch (erro) {
-        
+        return res.status(500).json({ erro: "Falha interna no servidor." });
     }
 });
 
